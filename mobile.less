@@ -1,0 +1,27 @@
+// ----------------------------------------------------------------------------------
+// Mobile UX Utilities
+// Author: Rodrigo Fernández-Romero (https://github.com/FdezRomero/HTML5-LESS-Mixins)
+// ----------------------------------------------------------------------------------
+
+
+// Minimum tap target areas
+@tap-target-ios: 44px;
+@tap-target-android: 48px;
+@tap-target-wp: 34px;
+
+// Creates an invisible tap target area around an element
+// Applies to: 'a' elements with 'href'
+// Values: <size>
+.tap-expand (@size: 8px) {
+    position: relative;
+    
+    &:before {
+        position: absolute;
+        display: block;
+        content: ' ';
+        top: ~"-@{size}";
+        right: ~"-@{size}";
+        bottom: ~"-@{size}";
+        left: ~"-@{size}";
+    }
+}
